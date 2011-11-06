@@ -1,10 +1,13 @@
 /**
  * @singleton
  * @accessors true
- * @initMethod setup
+ * @setupMethod setup
  */
 component {
 
+	/**
+	 * @inject coldmvc
+	 */
 	property config;
 
 	public any function init() {
@@ -14,11 +17,11 @@ component {
 		return this;
 
 	}
-	
+
 	public void function setup() {
-		
+
 		variables.hyrule = new hyrule.system.core.Hyrule(variables.config);
-		
+
 	}
 
 	public any function validate(required any target, string context="*", string locale=""){
